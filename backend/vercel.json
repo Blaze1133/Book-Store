@@ -1,14 +1,14 @@
 {
     "version": 2,
     "functions": {
-      "backend/index.js": {
+      "index.js": {
         "runtime": "nodejs16.x"
       }
     },
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "/backend/index.js"
+        "destination": "/index.js"
       }
     ]
   }
