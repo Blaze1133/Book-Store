@@ -22,7 +22,7 @@ const EditBook = () => {
     if (author) data.author = author
     if (publishYear) data.publishYear = publishYear
     setLoading(true)
-    await axios.patch(`https://book-store-one-iota.vercel.app/${id}`, data)
+    await axios.patch(`https://book-store-one-iota.vercel.app/books/${id}`, data)
     enqueueSnackbar('Book updated successfully', { variant: 'success' })
     setLoading(false)
     navigate('/')

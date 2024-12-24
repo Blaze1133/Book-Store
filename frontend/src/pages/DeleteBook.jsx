@@ -15,7 +15,7 @@ const DeleteBook = () => {
 
   const handleDeleteBook = async () =>{
     setLoading(true)
-    await axios.delete(`https://book-store-one-iota.vercel.app/${id}`)
+    await axios.delete(`https://book-store-one-iota.vercel.app/books/${id}`)
     enqueueSnackbar('Book deleted successfully', { variant: 'success' })
     setLoading(false) 
     navigate('/')
