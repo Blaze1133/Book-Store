@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const getBooks = async () => {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/books");
+      const response = await axios.get("https://book-store-one-iota.vercel.app/books");
       if (Array.isArray(response.data.data)) {
         setBooks(response.data.data); // only set if it's an array
       } else {

@@ -19,7 +19,7 @@ const CreateBook = () => {
       publishYear
     }
     setLoading(true)
-    await axios.post('http://localhost:5000/books', data)
+    await axios.post('https://book-store-one-iota.vercel.app/books', data)
     enqueueSnackbar('Book created successfully', { variant: 'success' })
     setLoading(false)
     navigate('/')
