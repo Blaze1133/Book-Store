@@ -8,9 +8,9 @@ require("express-async-errors"); // the pass the error, to next available middle
 
 app.use(express.json()); // essential for parsing the json data in the body
 
-const connectDb = require("./db/connect");
-const bookRouter = require("./router/books");   
-const errorHandlerMiddleware = require("./middleware/errorHandler");
+const connectDb = require("../db/connect");
+const bookRouter = require("../router/books");   
+const errorHandlerMiddleware = require("../middleware/errorHandler");
 
 app.use('/books',bookRouter);
 app.use(errorHandlerMiddleware)
