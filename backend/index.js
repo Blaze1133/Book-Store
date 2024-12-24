@@ -4,7 +4,6 @@ const app = express();
 const cors = require("cors"); //CROSS ORIGIN RESOURCE SHARING, allows front end to talk with the backend
 app.use(cors()); // impmenting cors for all the routes
 
-require("dotenv").config(); // to use .env file
 require("express-async-errors"); // the pass the error, to next available middleware
 
 app.use(express.json()); // essential for parsing the json data in the body
@@ -16,7 +15,8 @@ const errorHandlerMiddleware = require("./middleware/errorHandler");
 app.use('/books',bookRouter);
 app.use(errorHandlerMiddleware)
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
+const URL="mongodb+srv://blaze:123@nodeexpress.3kd2m.mongodb.net/Books-Collection?retryWrites=true&w=majority&appName=NodeExpress"
 
 
 app.get("/",(req,res)=>{
@@ -28,7 +28,7 @@ const start = async() =>{
         app.listen(PORT,()=>{
             console.log(`Server running on port ${PORT}`);
         });
-        await connectDb(process.env.URL)
+        await connectDb(URL)
         console.log("Database connected successfully");
         
     }catch(error){
