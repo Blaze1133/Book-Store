@@ -13,7 +13,7 @@ const ShowBook = () => {
   useEffect(() => {
     const getBook = async() =>{
       setLoading(true)
-      const response = await axios.get(`https://book-store-one-iota.vercel.app//${id}`)
+      const response = await axios.get(`https://book-store-one-iota.vercel.app/${id}`)
       setBook(response.data.data)
       setLoading(false) 
     }
