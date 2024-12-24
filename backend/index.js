@@ -19,6 +19,9 @@ app.use(errorHandlerMiddleware)
 const PORT = process.env.PORT || 5000;
 
 
+app.get("/",(req,res)=>{
+    res.send("Deployed successfully");
+})
 
 const start = async() =>{
     try{
